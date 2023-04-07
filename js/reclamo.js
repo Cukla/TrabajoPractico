@@ -1,3 +1,4 @@
+import { jsPDF } from "jspdf";
 
 const boton_enviar = document.querySelector(".boton-enviar");
 const boton_cerrar = document.querySelector(".boton-cerrar");
