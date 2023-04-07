@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
@@ -28,7 +30,7 @@
                 </li>
             </ul>
         </nav>
-        <div class="boton-menu">
+         <div class="boton-menu">
             <ion-icon name="menu-outline"></ion-icon> 
         </div>
         <div class="items-menu">
@@ -295,12 +297,13 @@
                 Realiza tu reclamo, en los siguientes campos para darte tu solucion a la brebedad ipsum dolor sit
                 amet consectetur adipisicing elit. Dolores tempore et numquam ratione neque ipsa optio de
             </p>
-            <form action="" method="POST">
-                <input type="text" placeholder="Nombre...">
-                <input type="email" placeholder="@Email.com...">
-                <input type="tel" placeholder="Telefono..."></input>
-                <textarea placeholder="Reclamo..."></textarea>
-                <button class="boton-enviar">
+            <form id="miFormulario" name="miFormulario" action="#" method="GET" >
+                <input type="text" id="nombre" placeholder="Nombre..." required>
+                <input type="email" id="email" placeholder="@Email.com..." required>
+                <input type="tel" id="telefono" placeholder="Telefono..." required>
+                <textarea placeholder="Reclamo..." id="reclamo" required></textarea>
+                <p id="mensajeError" hidden></p>
+                <button class="boton-enviar" type="submit">
                     <ion-icon name="send-outline"></ion-icon>
                     <span>Enviar</span>
                 </button>
@@ -312,6 +315,12 @@
                 <span>Mensaje</span>
                 <ion-icon class="boton-cerrar" name="close-outline"></ion-icon>
             </div>
+            <div class="blockheader">
+                <p id="mensaje_nombre"></p>
+                <p id="mensaje_email">Mensaje</p>
+                <p id="mensaje_tel">Mensaje</p>
+                <p id="mensaje_reclamo">Mensaje</p>
+            </div>
             <div class="body">
                 <p>Reclamo efectuado con exito</p>
                 <p>Aguarde nuestra respuesta por favor</p>
@@ -320,9 +329,9 @@
                         <ion-icon name="checkmark-outline"></ion-icon>
                         <span>Aceptar</span>
                     </button>
-                    <button class="boton-imprimir">
+                    <button class="boton-imprimir" >
                         <ion-icon name="print-outline"></ion-icon>
-                        <span>Imprimir reclamo</span>
+                        <span>Exportar a PDF</span>
                     </button>
                 </div>
             </div>
