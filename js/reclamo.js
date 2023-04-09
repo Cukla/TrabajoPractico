@@ -1,56 +1,69 @@
-import { jsPDF } from "jspdf";
-
-const boton_enviar = document.querySelector(".boton-enviar");
-const boton_cerrar = document.querySelector(".boton-cerrar");
-const boton_aceptar = document.querySelector(".boton-aceptar");
-const boton_exportar = document.querySelector(".boton-imprimir");
-const mensaje = document.querySelector(".mensaje-confirmacion");
-const section_reclamos = document.getElementById("reclamos");
-const miFormulario = document.getElementById('miFormulario');
-
-boton_enviar.addEventListener('click', (e) => {
-    e.preventDefault();
-    mensaje.style.display = "block";
-    section_reclamos.style.opacity = "0.3";
-    // Obtener los valores de los campos de formulario input y textarea
-    const nombre = document.getElementById("nombre").value;
-    const email = document.getElementById("email").value;
-    const telefono = document.getElementById("telefono").value;
-    const reclamo = document.getElementById("reclamo").value;
-
-    // Establecer el texto de los elementos p correspondientes
-    document.getElementById("mensaje_nombre").innerHTML = `Nombre: ${nombre}`;
-    document.getElementById("mensaje_email").innerHTML = `Email: ${email}`;
-    document.getElementById("mensaje_tel").innerHTML = `Telefono: ${telefono}`;
-    document.getElementById("mensaje_reclamo").innerHTML = `Reclamo: ${reclamo}`;
-})
-boton_cerrar.addEventListener('click', (e) => {
-    mensaje.style.display = "none";
-    section_reclamos.style.opacity = "1";
-    e.preventDefault();
-})
-boton_exportar.addEventListener('click', (e) => {
-  // Crear un nuevo objeto jsPDF
-  const pdf = new jsPDF();
-  // Obtener el contenido HTML de los elementos p
-  const contenidoHTML = document.getElementById("mensaje_nombre").outerHTML
-                        + document.getElementById("mensaje_email").outerHTML
-                        + document.getElementById("mensaje_tel").outerHTML
-                        + document.getElementById("mensaje_reclamo").outerHTML;
-  // Agregar el contenido HTML al PDF
-  pdf.html(contenidoHTML, {
-    callback: function(pdf) {
-      // Descargar el archivo PDF
-      pdf.save("reclamo.pdf");
-    }
-  });
-})
-boton_aceptar.addEventListener('click', (e) => {
-    mensaje.style.display = "none";
-    section_reclamos.style.opacity = "1";
-    e.preventDefault();
-})
-miFormulario.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-})
+$(document).ready(() => {
+    $(".boton-enviar").click((e) => {
+        let formulario = new FormValidator('formulario-reclamo',[
+            {
+                name : "nombre",
+                display : "nombre",
+                rules : "required|min_length[5]"
+            },
+            {
+                name : "email",
+                display : "@email",
+                rules : "required|valid_email"
+            },
+            {
+                name : "telefono",
+                display : "telefono",
+                rules : "required|min_length[11]"
+            },
+            {
+                name : "reclamo",
+                display : "reclamo",
+                rules : "required|min_length[20]"
+            }
+        ],function(errores, evento){
+            if(errores.length > 0){
+                let mensaje = '';
+                errores.forEach((campo) => {
+                    let nombre = campo.message.split(" ")[1];
+                    if(campo.message.split(" ")[7]!=undefined){
+                        mensaje += "😐 Error campo "+nombre+" debe tener por lo menos "+campo.message.split(" ")[7]+" caracteres";
+                    }else{
+                        switch(nombre){
+                            case "nombre":
+                                mensaje += "😐 Error campo "+nombre+" es obligatorio";
+                            break;
+                            case "@email":
+                                mensaje += "😐 Error campo "+nombre+" es obligatorio";
+                            break;
+                            case "telefono":
+                                mensaje += "😐 Error campo "+nombre+" es obligatorio";
+                            break;
+                            case "reclamo":
+                                mensaje += "😐 Error campo "+nombre+" es obligatorio";
+                            break;
+                        }
+                    }
+                })
+                $(".mensaje-error").css({"display":"block"});
+                document.querySelector('.mensaje-error').innerText = mensaje;
+            }else{
+                $(".mensaje-error").hide();
+                evento.preventDefault();
+                $(".mensaje-confirmacion").css({"display" : "block"});
+                $("#reclamos").css({"opacity" : "0.3"});
+            }
+        });
+    })
+  
+    $(".boton-cerrar").click(() => {
+        $(".mensaje-confirmacion").hide();
+        $("#reclamos").css({"opacity" : "1"})
+        document.querySelector("form").reset();
+    })
+    $(".boton-aceptar").click(() => {
+        $(".mensaje-confirmacion").hide();
+        $("#reclamos").css({"opacity" : "1"})
+        document.querySelector("form").reset();
+    })
+});
