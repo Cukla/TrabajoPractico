@@ -1,5 +1,4 @@
 /*----------------------------General---------------------------*/
-/*----------------------------General---------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 :root{
@@ -26,7 +25,6 @@ body::-webkit-scrollbar-thumb{
     background:var(--color-font-tertiary);
     border-radius: 50px;
 }
-
 /*---------------------Menu---------------------*/
 header{
     position: fixed;
@@ -103,6 +101,7 @@ header .items-menu a{
     font-weight: 600;
     letter-spacing: 1px;
 }
+
 /*---------------------Organizacion-------------------*/
 #organizacion{
     display: flex;
@@ -148,16 +147,18 @@ header .items-menu a{
     text-decoration: none;
     display: inline-block;
     margin: 30px 0px;
-    padding: 13px 35px;
+    padding: 10px 35px;
     border-radius: 25px;
     background-color: var(--color-font-tertiary);
     color: var(--color-font-primary);
-    
     box-shadow: 0 0 20px var(--color-text-primary);
 }
 #organizacion article .boton:hover{
-    box-shadow: 0 0 20px var(--color-text-primary);
-    color: var(--color-text-primary);
+    cursor: pointer;
+    color: var(--color-font-secondary);
+    background-color: var(--color-font-primary);
+    box-shadow: 0 0 20px 10px var(--color-font-secondary);
+    transition-duration: 0.5s;
 }
 
 /*------------------Productos------------------*/
@@ -166,6 +167,7 @@ header .items-menu a{
     padding: 0px 45px 50px 45px;
 }
 #productos h6{
+    text-shadow: 0px 5px 4px var(--color-font-tertiary);
     color: var(--color-text-primary);
     font-weight: bold;
     text-align: center;
@@ -173,14 +175,14 @@ header .items-menu a{
     padding-bottom: 10px;
     font-size: 35px;
     letter-spacing: 1px;
-    margin-bottom: 15px;
+    margin-bottom: 13px;
 }
-#productos p{
-    font-size: 13px;
+#productos .info{
+    font-size: 15px;
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color:var(--color-text-primary);
-    margin-bottom: 20px;
+    margin-bottom: 35px;
     padding: 1px;
 }
 #productos .productos-container{
@@ -189,40 +191,44 @@ header .items-menu a{
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    padding: 15px 2px 8px 5px;
-    border-radius: 30px;
+    padding: 15px 10px 15px 10px;
 }
-#productos .producto{
+#productos .productos-container .producto{
     min-width: 290px;
     max-width: 290px;
     height: 400px;
     box-shadow: 0 0 20px 1px var(--color-text-primary);
-    border-radius: 15px;
+    border-radius: 17px;
     display: block;
     text-align: center;
     margin-bottom: 30px;
 }
-#productos .producto:hover{
+#productos .productos-container .producto:hover{
     cursor: pointer;
     transition-duration: 0.3s;
     transform: translateY(-5px);
-    box-shadow: 0 0 20px 5px var(--color-font-secondary);
+    box-shadow: 0px  0px 10px 6px var(--color-font-secondary);
+}
+#productos .productos-container .producto p{
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 3 px;
+    color:var(--color-text-primary);
+    margin-bottom: 20px;
+    padding: 3px 10px 0px 10px;
 }
 #productos .producto img{
     width: 100%;
     height: 200px;
+    margin-bottom: 20px;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
 }
 #productos .nombre{
-    font-size: 17px;
+    text-shadow: 0px 0px 1px var(--color-font-tertiary);
+    letter-spacing: 1.5px;
+    font-size: 16px;
     font-weight: 600;
-    color:var(--color-text-primary);
-    margin-top: 10px;
-}
-#productos .descripcion{
-    font-size: 14px;
-    padding: 0px 10px 0px 10px;
     color:var(--color-text-primary);
 }
 #productos .precio{
@@ -242,31 +248,30 @@ header .items-menu a{
 }
 
 #contacto h2{
+    text-shadow: 0px 5px 4px var(--color-font-tertiary);
     color: var(--color-text-primary);
     font-weight: bold;
     text-align: center;
     font-size: 35px;
     letter-spacing: 1px;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
     background: transparent;
 }
-#contacto .descripcion{
-    width: 50%;
-    height: 50%;
-    margin: auto;
+#contacto .info{
+    background: transparent;
+    font-size: 15px;
     text-align: center;
-    font-size: 16px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color:var(--color-text-primary);
-    margin-bottom: 80px;
-    padding: 0px 100px;
-    background: transparent;
+    margin-bottom: 35px;
+    padding: 1px 100px;
 }
-#contacto .items{
+#contacto article{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 100px;
+    gap: 80px;
+    padding: 50px 2px;
     background: transparent;
 }
 #contacto article .item{
@@ -276,15 +281,15 @@ header .items-menu a{
     padding: 25px 10px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 0 12px 0px var(--color-text-primary);
+    box-shadow: 0  0 12px 0px var(--color-text-primary);
 }
-#contacto .items .item:hover{
+#contacto article .item:hover{
     cursor: pointer;
-    box-shadow: 0 0 20px 1px var(--color-font-tertiary);
+    box-shadow: 0  0 20px 8px var(--color-font-tertiary);
     transition-duration: 0.3s;
     transform: translateY(-5px);
 }
-#contacto .items .item ion-icon{
+#contacto article .item ion-icon{
     width: 30px;
     height: 30px;
     padding: 10px;
@@ -292,7 +297,7 @@ header .items-menu a{
     background-color: var(--color-font-secondary);
     border-radius: 50%;
 }
-#contacto .items .item h3{
+#contacto article .item h3{
     font-weight: 700;
     margin: 10px 0px 15px 0px;
 }
@@ -302,7 +307,8 @@ header .items-menu a{
     display: block;
     padding: 0px 45px 100px 45px;
 }
-#personal h2{
+#personal h6{
+    text-shadow: 0px 5px 4px var(--color-font-tertiary);
     color: var(--color-text-primary);
     font-weight: bold;
     text-align: center;
@@ -312,28 +318,22 @@ header .items-menu a{
     letter-spacing: 1px;
     margin-bottom: 15px;
 }
-#personal .descripcion{
+#personal .info{
+    font-size: 15px;
     text-align: center;
-    font-size: 13px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color:var(--color-text-primary);
-    margin-bottom: 20px;
-    padding: 0px 5px;
+    margin-bottom: 35px;
+    padding: 1px 100px;
 }
 #personal .personal-container{
     display: flex;
-    align-items: center;
-    padding: 60px 2px 8px 5px;
-    gap: 60px;
-    overflow-x: scroll;
-    border-radius: 10px;
-}
-#personal .personal-container::-webkit-scrollbar{
-    height: 10px;
-}
-#personal .personal-container::-webkit-scrollbar-thumb{
-    background:var(--color-font-tertiary);
-    border-radius: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 80px;
+    padding: 50px 1px;
+    background: transparent;
+
 }
 #personal .personal-container .personal{
     min-width: 230px;
@@ -350,24 +350,27 @@ header .items-menu a{
     cursor: pointer;
     transition-duration: 0.5s;
     transform: translateY(-5px);
-    box-shadow: 0 0 10px 1px var(--color-font-secondary);
+    box-shadow: 0 0 10px 10px var(--color-font-secondary);
 }
-#personal .personal-container .personal h5{
-    font-size: 15px;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
-#personal .personal-container .personal .icono{
-    background-color: var(--color-text-primary);
-    padding: 20px;
-    border-radius: 50%;
+#personal .personal-container .personal img{
     text-align: center;
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
+}
+#personal .personal-container .personal .nombre{
+    padding-top:2px;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+#personal .personal-container .personal .descripcion{
+    font-size: 13px;
+    margin-top: 3px;
+    letter-spacing: 1px;
 }
 #personal .personal-container .personal .icono ion-icon{
     color: var(--color-font-tertiary);
@@ -375,11 +378,7 @@ header .items-menu a{
     height: 120px;
     background-color: transparent;
 }
-#personal .personal-container .personal p{
-    font-size: 13px;
-    margin-top: 10px;
-    letter-spacing: 1px;
-}
+
 
 /**----------------------Reclamos-----------------**/
 #reclamos{
@@ -389,6 +388,7 @@ header .items-menu a{
     display: block;
 }
 #reclamos h2{
+    text-shadow: 0px 5px 4px var(--color-font-tertiary);
     color: var(--color-text-primary);
     font-weight: bold;
     text-align: center;
@@ -396,14 +396,13 @@ header .items-menu a{
     letter-spacing: 1px;
     padding-bottom: 40px;
 }
-#reclamos .descripcion{
-    margin: auto;
+#reclamos .info{
+    font-size: 15px;
     text-align: center;
-    font-size: 16px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color:var(--color-text-primary);
-    margin-bottom: 50px;
-    padding: 0px 100px;
+    margin-bottom: 35px;
+    padding: 1px 100px;
 }
 #reclamos form{
     align-items: center;
@@ -412,7 +411,7 @@ header .items-menu a{
     background-color:transparent;
 }
 #reclamos form textarea{
-    min-height: 50px;
+    min-height: 70px;
     max-height: 100px;
 }
 #reclamos form textarea::-webkit-scrollbar{
@@ -423,6 +422,7 @@ header .items-menu a{
     border-radius: 50px;
 }
 #reclamos form textarea, #reclamos form input{
+    background-color: transparent;
     max-width: 30%;
     min-width: 30%;
     padding: 10px;
@@ -434,7 +434,7 @@ header .items-menu a{
 }
 #reclamos form textarea:hover, #reclamos form input:hover{
     cursor: pointer;
-    box-shadow: 0 0 30px 0px var(--color-font-tertiary);
+    box-shadow: 0 0 10px 1px var(--color-font-tertiary);
 }
 #reclamos form button{
     display: flex;
@@ -458,26 +458,41 @@ header .items-menu a{
     box-shadow: 0 0 20px 10px var(--color-font-secondary);
     transition-duration: 1s;
 }
-#reclamos form button span, #reclamos form button ion-icon{
-    background-color: transparent;
-}
 #reclamos form button span{
+    background: transparent;
     font-weight: bolder;
     padding-top: 2.3px;
 }
 #reclamos form button ion-icon{
+    background-color: transparent;
     width: 20px;
     height: 20px;
 }
-
+.mensajes{
+    display: flex;
+    justify-content: center;
+    transform: translateY(-400px);
+}
+.mensaje-error{
+    display: none;
+    margin: auto;
+    border: 1px solid var(--color-font-secondary);
+    color: var(--color-text-primary);
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    width: 30%;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 0 20px 6px red;
+}
 /*------------------Modal reclamo------------------*/
 .mensaje-confirmacion{
     display: none;
-    position: fixed;
-    top: 43%;
-    left: 37.2%;
     width: 350px;
-    height: 300px;
+    height: 165px;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 20px 10px var(--color-font-secondary);
@@ -485,19 +500,6 @@ header .items-menu a{
 }
 .mensaje-confirmacion .header{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-.mensaje-confirmacion .header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-.mensaje-confirmacion .blockheader{
-    display: block;
-    word-wrap: break-word;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
@@ -607,11 +609,13 @@ footer .socials ion-icon:hover{
     header .boton-menu{
         display: block;
     }
+    #organizacion{
+        margin:-2px;
+        padding: 0px;
+        background-size: 750px;
+    }
     #organizacion article{
         display: block;
-        text-align: end;
-    }
-    #organizacion article h1, #organizacion article p{
         text-align: end;
     }
     #organizacion article p{
@@ -622,21 +626,41 @@ footer .socials ion-icon:hover{
         width: 570px;
         height: 570px;
     }
-    #organizacion article .descripcion{
-        margin-bottom: 30px;
-    }
-    #organizacion{
-        margin:-2px;
-        padding: 0px;
-        background-size: 750px;
-    }
     #organizacion article .boton{
         margin: 30px 0px;
         padding: 13px 30px;
         box-shadow: 0 0 20px var(--color-text-primary);
     }
+    #contacto .info{
+        padding: 1px 100px;
+        font-size: 12px;
+    }
+    #personal .info{
+        padding: 1px 100px;
+        font-size: 12px;
+       
+    }
+    #reclamos .info{
+       padding: 1px;
+       font-size: 12px;
+    }
+}
+@media (max-width : 1042px){
+    #organizacion article p{
+        padding-left: 300px;
+    }
+    
+}
+@media (max-width : 938px){
+    #organizacion article p{
+        padding-left: 200px;
+    }
 }
 @media (max-width : 860px){
+    #organizacion{
+        margin-top: -70px;
+        background-size: 650px;
+    }
     #organizacion article p{
         padding-left: 200px;
     }
@@ -646,9 +670,8 @@ footer .socials ion-icon:hover{
     #organizacion article .descripcion h1{
         font-size: 25px;
     }
-    #organizacion{
-        margin-top: -70px;
-        background-size: 650px;
+    #organizacion article .boton{
+        font-size: 15px;
     }
     #organizacion article img{
         margin-top: -100px;
@@ -663,28 +686,38 @@ footer .socials ion-icon:hover{
     .mensaje-confirmacion{
         left: 30%;
     }
-    #organizacion article .boton{
-        font-size: 15px;
-    }
 }
 @media (max-width : 730px){
     #organizacion article .descripcion h1{
-        font-size: 23px;
+        font-size: 20px;
     }
     #organizacion{
-        margin-top: -70px;
-        background-size: 550px;
+        margin-top: -60px;
+        background-size: 600px;
     }
     #organizacion article img{
-        margin-top: -90px;
+        margin-top: -10px;
         width: 310px;
         height: 310px;
     }
     #organizacion article .boton{
         font-size: 12px;
     }
+    #organizacion article p{
+        padding-left: 150px;
+        font-size: 13px;
+    }
+    #personal .info{
+        padding: 1px;
+    }
+    #contacto .info{
+        padding: 10px;
+    }
+    #contacto article{
+        gap: 30px;
+    }   
 }
-@media (max-width : 697px){
+@media (max-width : 709px){
     #organizacion article img{
         width: 280px;
         height: 280px;
@@ -695,25 +728,16 @@ footer .socials ion-icon:hover{
     }
     #productos .productos-container{
         display: flex;
-        gap: 30px;
-        overflow-y: scroll ;
-        height:700px ;
+        
     }
     #productos .productos-container .producto{
         margin: auto;
-    }
-    #productos .productos-container::-webkit-scrollbar{
-        width: 10px;
-    }
-    #productos .productos-container ::-webkit-scrollbar-thumb{
-        background:var(--color-font-tertiary);
-        border-radius: 50px;
     }
     .mensaje-confirmacion{
         left: 25%;
     }
 }
-@media (max-width : 623px){
+@media (max-width : 673px){
     header .boton-menu{
         background-color: transparent;
     }
@@ -722,16 +746,16 @@ footer .socials ion-icon:hover{
         width: 45px;
         height: 45px;
     }
+    #organizacion{
+        margin-top: -70px;
+        background-size: 660px;
+    }
     #organizacion article .descripcion h1{
         font-size: 18px;
     }
     #organizacion article p{
         padding-left: 100px;
         font-size: 13px;
-    }
-    #organizacion{
-        margin-top: -70px;
-        background-size: 630px;
     }
     #organizacion article .boton{
         font-size: 10px;
@@ -746,10 +770,8 @@ footer .socials ion-icon:hover{
         left: 18%;
     }
 }
-.mensaje-confirmacion{
-    left: 25%;
-}
-@media (max-width : 515px){
+
+@media (max-width : 585px){
     #organizacion article .descripcion h1{
         padding-left: 160px;
     }
@@ -766,19 +788,41 @@ footer .socials ion-icon:hover{
     .mensaje-confirmacion{
         left: 15%;
     }
-}
-@media (max-width : 383px){
-    #organizacion article p{
-        padding-left: 50px;
+    #personal .info{
+        font-size: 10px;
     }
-    #organizacion{
-        background-size: 600px;
+    #personal .personal-container{
+        gap: 20px;
+        padding-top: 15px;
+    }
+    #reclamos .info{
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 472px){
+    #organizacion article p{
+        font-size: 10px;
+        text-align: center;
+        padding: 12px;
     }
     #organizacion article img{
-        width: 280px;
-        height: 280px;
+        margin-top: 50px;
+        width: 330px;
+        height: 330px;
     }
-    .mensaje-confirmacion{
-        left: 1%;
+    #organizacion article .descripcion h1{
+        font-size: 15px;
+        text-align: center;
+        padding: 80px 12px 0px 12px;
     }
+    #organizacion article .descripcion .boton{
+        position: absolute;
+        margin-top: 5px;
+        width: 120px;
+        left: 33%;
+        font-size: 15px;
+        padding: 5px;
+        text-align: center;
+    } 
 }
