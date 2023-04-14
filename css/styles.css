@@ -575,26 +575,6 @@ footer p{
     justify-content: center;
     background-color: transparent;
 }
-footer .socials {
-    width: 100%;
-    padding-left: 10px;
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    background-color: transparent;
-}
-footer .socials ion-icon{
-    width: 30px;
-    height: 30px;
-    padding: 5px;
-    background-color: transparent;
-}
-footer .socials ion-icon:hover{
-    cursor: pointer;
-    letter-spacing: 8px;
-    transition-duration: 1s;
-    transform: translateY(-5px);
-}
 
 /*------------------Media------------------*/
 @media (max-width : 1150px){
